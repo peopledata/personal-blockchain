@@ -25,4 +25,12 @@ Server Version: version.Info{Major:"1", Minor:"15", GitVersion:"v1.15.0", GitCom
 ## Usage 
 Once you have installed the tools above, `cd` into the client (besu/goquorum) and into the consensus algorithm of choice and then run `./deploy.sh`
 
+Enter into the pod to check:
+```bash
+kubectl get pods --all_namespaces //list the all pods
+
+kubectl exec -it --namespace=quorum member1-0 -- /bin/bash
+```
+
+
 To remove the k8s objects, run `./remove.sh`
