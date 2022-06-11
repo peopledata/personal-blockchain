@@ -4,7 +4,7 @@ metadata:
   name: quorum-member3
   labels:
     app: member3
-  namespace: quorum
+  namespace: personal-blockchain
 spec:
   type: ClusterIP
   selector:

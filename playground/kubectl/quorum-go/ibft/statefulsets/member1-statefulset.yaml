@@ -4,14 +4,14 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: member1-sa
-  namespace: quorum
+  namespace: personal-blockchain
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: member1-keys-read-role
-  namespace: quorum
+  namespace: personal-blockchain
 rules:
 - apiGroups: [""]
   resources: ["secrets"]
@@ -25,7 +25,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: member1-rb
-  namespace: quorum
+  namespace: personal-blockchain
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -33,7 +33,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: member1-sa
-  namespace: quorum
+  namespace: personal-blockchain
 
 ---
 apiVersion: apps/v1
@@ -42,7 +42,7 @@ metadata:
   name: member1
   labels:
     app: member1
-  namespace: quorum
+  namespace: personal-blockchain
 spec:
   replicas: 1
   selector:
