@@ -80,7 +80,7 @@ If you are deploying to cloud, we support AWS and Azure at present. Please refer
 If you are deploying locally you need a Kubernetes cluster like [Minikube](https://kubernetes.io/docs/setup/learning-environment/minikube/)
 
 #### Namespaces:
-Currently we do **not** deploy anything in the `default` namespace and instead use the `quorum` namespace. You can change this to suit your requirements
+Currently we do **not** deploy anything in the `default` namespace and instead use the `personal-blockchain` namespace. You can change this to suit your requirements
 
 Namespaces are part of the setup and do not need to be created via kubectl prior to deploying. To change the namespaces:
 - In Kubectl, you need to edit every file in the deployment
@@ -153,6 +153,14 @@ Ensure that the host being provisioned can find and connect to the bootnode's. Y
 Ensure that the host being provisioned can also connect to the other nodes that you have on the k8s cluster, otherwise it will be unable to connect to any peers (bar the bootnodes). The most reliable way to do this is via a VPN so it has access to the bootnodes as well as any nodes on the k8s cluster. You can alternatively use ingresses on the nodes (ideally more than just bootnodes) you wish to expose, where TCP & UDP on port 30303 need to be open for discovery.
 
 Additionally if you’re using permissioning on your network you will also have to specifically authorise the new nodes
+
+### Servcer Port:
+To avoid port conflit, please update your port when depoly. Following is the default port config in deployments yaml files.
+
+`cakeshop` port: 8989;
+`prometheus` port: 9191,
+`grafana` port: 3111
+`kuberneters dashboard` port: 9090
 
 
 ## Production Network Guidelines:
