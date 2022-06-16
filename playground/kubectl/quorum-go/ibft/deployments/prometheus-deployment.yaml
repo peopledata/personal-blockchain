@@ -86,7 +86,7 @@ spec:
               mountPath: /etc/prometheus/
               readOnly: true
           ports:
-            - containerPort: 9090
+            - containerPort: 9191
               name: http
               protocol: TCP
           command:

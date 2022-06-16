@@ -54,7 +54,7 @@ spec:
               subPath: goquorum.json
               readOnly: true
           ports:
-            - containerPort: 3000
+            - containerPort: 3111
               name: http
               protocol: TCP
       volumes:

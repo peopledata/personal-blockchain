@@ -83,7 +83,7 @@ spec:
               mountPath: /config/cakeshop/
               readOnly: true
           ports:
-            - containerPort: 8999
+            - containerPort: 8989
               name: http
               protocol: TCP
           command:
