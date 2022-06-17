@@ -58,7 +58,7 @@ spec:
         app: prometheus
       annotations:
         prometheus.io/scrape: "true"
-        prometheus.io/port: "9090"
+        prometheus.io/port: "9191"
     spec:
       serviceAccountName: prometheus
       containers:
@@ -86,7 +86,7 @@ spec:
               mountPath: /etc/prometheus/
               readOnly: true
           ports:
-            - containerPort: 9090
+            - containerPort: 9191
               name: http
               protocol: TCP
           command:

@@ -1876,10 +1876,10 @@ prometheus:
 
     ## Port for Prometheus Service to listen on
     ##
-    port: 9090
+    port: 9191
 
     ## To be used with a proxy extraContainer port
-    targetPort: 9090
+    targetPort: 9191
 
     ## List of IP addresses at which the Prometheus server service is available
     ## Ref: https://kubernetes.io/docs/user-guide/services/#external-ips
@@ -1921,10 +1921,10 @@ prometheus:
 
     ## Port for Prometheus Service per replica to listen on
     ##
-    port: 9090
+    port: 9191
 
     ## To be used with a proxy extraContainer port
-    targetPort: 9090
+    targetPort: 9191
 
     ## Port to expose on each node
     ## Only used if servicePerReplica.type is 'NodePort'
